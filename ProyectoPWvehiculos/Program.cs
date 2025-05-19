@@ -1,7 +1,12 @@
+using ProyectoPWvehiculos.Services;
+using ProyectoPWvehiculos.Servicios;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddTransient<IRepositorioVehiculos, RepositorioVehiculos>();
+builder.Services.AddScoped<IEmailSender, ServicioEmail>();
 
 var app = builder.Build();
 
