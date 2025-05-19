@@ -3,3 +3,15 @@
 @{
     ViewData["Title"] = "Crear Vehículo";
 }
+
+<div class="card shadow p-4 mt-5">
+    <h2 class="mb-4">Agregar Vehículo</h2>
+    <form asp-action="Crear" method="post">
+        <partial name="_FormularioVehiculoPartial" model="Model" />
+        <button type="submit" class="btn btn-primary">Guardar</button>
+    </form>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
