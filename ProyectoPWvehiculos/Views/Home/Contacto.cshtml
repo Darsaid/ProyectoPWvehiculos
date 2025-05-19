@@ -1,0 +1,60 @@
+﻿@model ProyectoPWvehiculos.Models.ContactoViewModel
+@{
+    ViewData["Title"] = "Contacto";
+}
+
+<div class="container mt-5 animate__animated animate__fadeIn">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-lg border-0 rounded-4 p-4 bg-light">
+                <div class="text-center mb-4">
+                    <i class="bi bi-envelope-paper-fill fs-1 text-primary"></i>
+                    <h2 class="mt-2">Contáctanos</h2>
+                    <p class="text-muted">¿Tienes preguntas? ¡Escríbenos!</p>
+                </div>
+
+                @if (ViewBag.Mensaje != null)
+                {
+                    @if (ViewBag.Mensaje != null)
+                    {
+                        <div class="text-center animate__animated animate__bounceIn">
+                            <i class="bi bi-check-circle-fill fs-1 text-success"></i>
+                            <h5 class="mt-2 text-success">@ViewBag.Mensaje</h5>
+                        </div>
+                    }
+                }
+
+                <form asp-action="Contacto" method="post" class="needs-validation" novalidate>
+                    <div class="mb-3">
+                        <label asp-for="Nombre" class="form-label fw-semibold"></label>
+                        <input asp-for="Nombre" class="form-control" placeholder="Tu nombre completo" />
+                        <span asp-validation-for="Nombre" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="Email" class="form-label fw-semibold"></label>
+                        <input asp-for="Email" class="form-control" placeholder="correo@ejemplo.com" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="Mensaje" class="form-label fw-semibold"></label>
+                        <textarea asp-for="Mensaje" class="form-control" rows="5" placeholder="Escribe tu mensaje aquí..."></textarea>
+                        <span asp-validation-for="Mensaje" class="text-danger"></span>
+                    </div>
+
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary px-5 rounded-pill">Enviar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+
+
+
