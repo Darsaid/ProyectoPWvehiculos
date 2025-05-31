@@ -1,0 +1,11 @@
+@ProyectoPWvehiculos_HostAddress = https://localhost:7117
+
+### Obtener todos los clientes
+GET {{ProyectoPWvehiculos_HostAddress}}/api/clientes
+Accept: application/json
+
+
+
+
+
+

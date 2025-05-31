@@ -1,3 +1,5 @@
+using Microsoft.EntityFrameworkCore;
+using ProyectoPWvehiculos.Data;
 using ProyectoPWvehiculos.Services;
 using ProyectoPWvehiculos.Servicios;
 
@@ -10,6 +12,10 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddTransient<IRepositorioVehiculos, RepositorioVehiculos>();
 builder.Services.AddScoped<IEmailSender, ServicioEmail>();
 builder.Services.AddScoped<IAuthService, GoogleAuthService>();
+
+builder.Services.AddDbContext<AplicacionDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
 
 
 var app = builder.Build();
@@ -28,6 +34,10 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
+
+// Después de app.UseAuthorization();
+app.MapControllers();
+
 
 app.MapControllerRoute(
     name: "default",

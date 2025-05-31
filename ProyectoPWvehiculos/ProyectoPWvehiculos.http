@@ -1,0 +1,18 @@
+﻿@ProyectoPWvehiculos_HostAddress = https://localhost:7117
+
+
+GET {{ProyectoPWvehiculos_HostAddress}}/api/clientes
+
+###
+
+
+
+POST {{ProyectoPWvehiculos_HostAddress}}/api/clientes
+Content-Type: application/json
+
+{
+  "Nombre": "Mario",
+  "Cedula": "1001401955",
+  "Telefono": "14511651651",
+  "Email": "lina@hotmail.com"
+}
