@@ -12,7 +12,32 @@ Content-Type: application/json
 
 {
   "Nombre": "Mario",
-  "Cedula": "1001401955",
+  "Cedula": "1001405689",
   "Telefono": "14511651651",
   "Email": "lina@hotmail.com"
 }
+
+###
+
+GET {{ProyectoPWvehiculos_HostAddress}}/api/clientes/16
+
+###
+
+
+PUT {{ProyectoPWvehiculos_HostAddress}}/api/clientes/16
+Content-Type: application/json
+
+{
+  "clienteId": 16,
+  "nombre": "Mario",
+  "cedula": "1001405689",
+  "telefono": "14511651651",
+  "email": "lina@hotmail.com",
+  "direccion": "Puertas de Mayorca"
+}
+
+###
+
+DELETE {{ProyectoPWvehiculos_HostAddress}}/api/clientes/1
+
+###
