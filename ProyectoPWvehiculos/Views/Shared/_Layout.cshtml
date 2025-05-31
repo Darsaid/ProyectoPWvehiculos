@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/AlquilerVehículos.styles.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/_Navbar.css" asp-append-version="true" />
+    <link href="~/css/site.css" rel="stylesheet" asp-append-version="true" />
 
 
     <!-- Bootstrap -->
@@ -27,9 +27,7 @@
 
     @await Html.PartialAsync("_Navbar")
 
-    @RenderSection("PageStyles", required: false)
-
-    <div class="container-fluid p-0">   
+    <div class="container-fluid p-0">
         @RenderBody()
     </div>
 
