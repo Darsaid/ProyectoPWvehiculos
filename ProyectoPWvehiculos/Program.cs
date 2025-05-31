@@ -1,12 +1,16 @@
 using ProyectoPWvehiculos.Services;
 using ProyectoPWvehiculos.Servicios;
 
+
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddTransient<IRepositorioVehiculos, RepositorioVehiculos>();
 builder.Services.AddScoped<IEmailSender, ServicioEmail>();
+builder.Services.AddScoped<IAuthService, GoogleAuthService>();
+
 
 var app = builder.Build();
 
@@ -30,3 +34,4 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
+

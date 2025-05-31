@@ -18,25 +18,171 @@
     </div>
 </section>
 
-<!-- SECCIÓN INFORMATIVA -->
-<section class="py-5 bg-light text-center">
+<!-- SECCIÓN CARRUSEL -->
+<section id="catalogo" class="d-flex align-items-center" style="min-height: 100vh; padding-top: 100px; margin-top: -100px">
+    <div class="col-md-12 mb-5 text-center">
+        <p class="h1">NUESTROS VEHÍCULOS</p>
+        <hr class="hr-one">
+        <p class="mt-4 lh-lg">Las mejores opciones para que reserves y aprovechess</p>
+
+        <div id="carouselVehiculos"
+             class="carousel slide carousel-fade"
+             data-bs-ride="carousel"
+             data-bs-interval="4000"
+             data-bs-pause="false">
+
+            <div class="carousel-inner">
+
+                <!-- Slide 1 -->
+                <div class="carousel-item active">
+                    <div class="row justify-content-center">
+                        <div class="col-md-4 mb-4">
+                            <img src="~/imagenes/camioneta.png" class="img-fluid rounded shadow-sm" alt="Camioneta">
+                            <h5 class="mt-3 text-primary">Camioneta white - Grupo X</h5>
+                            <p>Vehículo robusto, ideal para carga liviana.</p>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <img src="~/imagenes/chevroletNi.png" class="img-fluid rounded shadow-sm" alt="Chevrolet">
+                            <h5 class="mt-3 text-primary">Chevrolet Night - Grupo C</h5>
+                            <p>Compacto con aire, perfecto para ciudad.</p>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <img src="~/imagenes/joy.png" class="img-fluid rounded shadow-sm" alt="Joy">
+                            <h5 class="mt-3 text-primary">Chevrolet Joy - Grupo B</h5>
+                            <p>Eficiencia y comodidad para viajes cortos.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="carousel-item">
+                    <div class="row justify-content-center">
+                        <div class="col-md-4 mb-4">
+                            <img src="~/imagenes/joysedan.png" class="img-fluid rounded shadow-sm" alt="Joy Sedan">
+                            <h5 class="mt-3 text-primary">Chevrolet Joy Sedan - Grupo D</h5>
+                            <p>Más espacio y confort para la familia.</p>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <img src="~/imagenes/mioneta.png" class="img-fluid rounded shadow-sm" alt="Mioneta">
+                            <h5 class="mt-3 text-primary">Camioneta Chevrolet - Grupo Q</h5>
+                            <p>Potente y versátil para cualquier necesidad.</p>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <img src="~/imagenes/spark2.png" class="img-fluid rounded shadow-sm" alt="Spark 2">
+                            <h5 class="mt-3 text-primary">Spark 2 - Grupo E</h5>
+                            <p>Compacto, económico y moderno.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Flechas de navegación -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselVehiculos" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselVehiculos" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Siguiente</span>
+            </button>
+        </div>
+        <div class="text-center mt-4">
+            <a href="@Url.Action("ListaVehiculos", "Home")" class="btn btn-outline-primary text-uppercase">
+                MIRA TODOS LOS VEHÍCULOS
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- SOBRE NOSOTROS -->
+<section id="about" class="d-flex align-items-center" style="min-height: 97vh; padding-top: 100px; margin-top: -100px;">
+    <div class="container mb-5">
+        <div class="row align-items-center">
+            
+            <div class="col-md-6 mb-4 mb-md-0">
+                <img src="~/imagenes/02.jpg" alt="Car Image" class="img-fluid rounded-3">
+            </div>
+            
+            <div class="col-lg-6 mt-5 mt-sm-0">
+                <p class="h1">SOBRE NOSOTROS</p>
+                <hr class="hr-one m-0"/>
+                <p class="mt-4 lh-lg">
+                    Bienvenido a Anda Car Rental, donde nos dedicamos a brindar un 
+                    servicio excepcional y vehículos de primera calidad para todas 
+                    sus necesidades de transporte. Con años de experiencia en el sector, 
+                    nos enorgullecemos de nuestro compromiso con la satisfacción 
+                    y la seguridad del cliente.
+                </p>
+                <p class="mt-4 lh-lg">
+                    En Anda Car Rental, creemos en hacer que el alquiler de coches sea sencillo, 
+                    asequible y práctico. Nuestro equipo de profesionales se apasiona por ofrecer 
+                    soluciones personalizadas adaptadas a las necesidades únicas de cada cliente. 
+                    Tanto si viaja por negocios como por placer, estamos aquí para garantizar 
+                    que su viaje sea cómodo y memorable.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SECCIÓN SERVICIOS -->
+<section id="services" class="d-flex align-items-center" style="min-height: 100vh; padding-top: 100px; margin-top: -100px;">
     <div class="container">
-        <h2 class="mb-4">¿Por qué elegirnos?</h2>
-        <div class="row">
-            <div class="col-md-4 mb-4">
-                <i class="fas fa-car fa-3x mb-3 text-primary"></i>
-                <h5>Gran variedad</h5>
-                <p>Encuentra el carro que necesitas: económico, SUV, camioneta o más.</p>
+        <div class="col-md-12 mb-5 text-center">
+            <p class="h1 text-uppercase">NUESTROS SERVICIOS</p>
+            <hr class="hr-one">
+        </div>
+
+        <div class=" row g-4">
+            <div class="col-md-3 mb-4">
+                <div class="p-4 border rounded-3 h-100 service-card">
+                    <i class="fas fa-plane fa-3x mb-3 text-primary"></i>
+                    <p class="h4 mt-3">Traslado Aéreo</p>
+                    <p class="mb-0 small fs-6">
+                        Disfrute de traslados al aeropuerto
+                        sin complicaciones con Anda Car Rental. 
+                        Nuestro confiable servicio garantiza 
+                        recogidas y devoluciones puntuales, 
+                        para que su viaje al aeropuerto sea cómodo y sin estrés. 
+                        Relájese y deje que nos encarguemos de sus necesidades de transporte!</p>
+                </div>
             </div>
-            <div class="col-md-4 mb-4">
-                <i class="fas fa-bolt fa-3x mb-3 text-primary"></i>
-                <h5>Reserva en minutos</h5>
-                <p>Simple, rápido y 100% digital. Renta desde cualquier dispositivo.</p>
+            <div class="col-md-3 mb-4">
+                <div class="p-4 border rounded-3 h-100 service-card">
+                    <i class="fas fa-map-marker-alt fa-3x mb-3 text-primary"></i>
+                    <p class="h4 mt-3">Traslado de ciudad</p>
+                    <p class="mb-0 small fs-6">
+                        Recorre la ciudad fácilmente con nuestro servicio de traslados.
+                        Ya sea que vayas a una reunión de negocios o a explorar los lugares de interés,
+                        nuestros conductores profesionales te llevarán a tu destino de forma eficiente y cómoda. 
+                        Disfruta de un viaje sin complicaciones por la ciudad con Anda Car Rental!
+                    </p>
+                </div>
             </div>
-            <div class="col-md-4 mb-4">
-                <i class="fas fa-thumbs-up fa-3x mb-3 text-primary"></i>
-                <h5>Confiable y seguro</h5>
-                <p>Servicio garantizado con atención al cliente 24/7.</p>
+            <div class="col-md-3 mb-4">
+                <div class="p-4 border rounded-3 h-100 service-card">
+                    <i class="fas fa-city fa-3x mb-3 text-primary"></i>
+                    <p class="h4 mt-3">Tour por toda la ciudad</p>
+                    <p class="mb-0 small fs-6">
+                        Embárcate en una aventura inolvidable 
+                        con nuestro servicio de recorrido completo 
+                        por la ciudad. Explora las mejores atracciones y lugares 
+                        emblemáticos con la comodidad de un coche privado y un conductor experto. 
+                        Descubre joyas ocultas y lugares emblemáticos mientras vives la ciudad como nunca antes!
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="p-4 border rounded-3 h-100 service-card">
+                    <i class="fas fa-suitcase-rolling fa-3x mb-3 text-primary"></i>
+                    <p class="h4 mt-3">Transporte de equipaje</p>
+                    <p class="mb-0 small fs-6">
+                        Con nuestro servicio de transporte de equipaje, nos encargamos del trabajo pesado.
+                        Ya sea que se mude de casa o viaje con equipaje de gran tamaño, nuestras confiables 
+                        soluciones de transporte garantizan que sus pertenencias lleguen a su destino de forma segura. 
+                        Disfrute de la tranquilidad de saber que su equipaje está en buenas manos con Anda Car Rental!
+                    </p>
+                </div>
             </div>
         </div>
     </div>
