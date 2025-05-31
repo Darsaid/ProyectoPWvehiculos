@@ -1,5 +1,9 @@
-﻿@* _Navbar.cshtml *@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark py-3 animate__animated animate__fadeInDown">
+﻿@using System.Security.Claims
+@{
+    var user = User;
+}
+
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark py-3 animate__animated animate__fadeInDown">
     <div class="container d-flex align-items-center justify-content-between">
 
         <!-- Logo -->
@@ -14,20 +18,19 @@
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <!-- Menú -->
+        <!-- Menú principal -->
         <div class="collapse navbar-collapse justify-content-center align-items-center" id="navbarNav">
             <ul class="navbar-nav gap-3 align-items-center me-3">
                 <li class="nav-item">
                     <a class="nav-link nav-animated text-white" asp-action="Index" asp-controller="Home">Inicio</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link nav-animated text-white" href="#">Sobre nosotros</a>
+                    <a class="nav-link nav-animated text-white" href="#catalogo">Catalogo</a>
+                <li class="nav-item">
+                    <a class="nav-link nav-animated text-white" href="#about">Sobre nosotros</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link nav-animated text-white" href="@Url.Action("Index", "Vehiculo")">Catalogo</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link nav-animated text-white" href="#">Servicios</a>
+                    <a class="nav-link nav-animated text-white" href="#services">Servicios</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link nav-animated text-white" href="#">Revisar</a>
@@ -39,7 +42,7 @@
         </div>
 
         <!-- Botón Reserve -->
-        <div class="d-none d-lg-block">
+        <div class="d-none d-lg-block ms-3">
             <a class="btn btn-primary rounded-pill px-4 py-2 animate__animated animate__pulse animate__infinite reserve-btn"
                asp-controller="Vehiculo" asp-action="Crear">
                 Reserva ahora
@@ -48,15 +51,3 @@
 
     </div>
 </nav>
-
-        top: 0;
-        z-index: 1030;
-        backdrop-filter: blur(10px);
-        background-color: rgba(255, 255, 255, 0.9);
-    }
-
-    .nav-link.nav-animated {
-        position: relative;
-        transition: color 0.3s ease, transform 0.3s ease;
-    }
-
