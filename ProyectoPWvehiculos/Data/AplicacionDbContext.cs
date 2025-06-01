@@ -11,5 +11,7 @@ namespace ProyectoPWvehiculos.Data
         }
 
         public DbSet<Cliente> Clientes { get; set; }
+        public DbSet<Vehiculo> Vehiculo { get; set; }
+        public DbSet<ProyectoPWvehiculos.Models.Alquiler> Alquiler { get; set; }
     }
 }

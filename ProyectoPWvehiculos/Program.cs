@@ -16,6 +16,7 @@ builder.Services.AddScoped<IAuthService, GoogleAuthService>();
 builder.Services.AddDbContext<AplicacionDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+builder.Services.AddHttpClient();
 
 
 var app = builder.Build();

@@ -1,108 +1,65 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using ProyectoPWvehiculos.Data;
+using Newtonsoft.Json;
 using ProyectoPWvehiculos.Models;
+using System.Text;
 
 namespace ProyectoPWvehiculos.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    public class ClientesController : ControllerBase
+    public class ClientesController : Controller
     {
-        private readonly AplicacionDbContext _context;
+        private readonly HttpClient _httpClient;
+        private object _context;
 
-        public ClientesController(AplicacionDbContext context)
+        public ClientesController(IHttpClientFactory httpClientFactory)
         {
-            _context = context;
+            _httpClient = httpClientFactory.CreateClient();
+            _httpClient.BaseAddress = new Uri("https://localhost:7117/api/");
         }
 
-        // GET: api/Clientes
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<Cliente>>> GetClientes()
+        // GET: /Clientes
+        public async Task<IActionResult> Index()
         {
-            return await _context.Clientes.ToListAsync();
+            var response = await _httpClient.GetAsync("clientes");
+            if (!response.IsSuccessStatusCode)
+            {
+                return View("Error");
+            }
+
+            var json = await response.Content.ReadAsStringAsync();
+            var clientes = JsonConvert.DeserializeObject<List<Cliente>>(json);
+
+            return View(clientes);
         }
 
-        // GET: api/Clientes/5
-        [HttpGet("{id}")]
-        public async Task<ActionResult<Cliente>> GetCliente(int id)
+        // GET: /Clientes/Create
+        public IActionResult Create()
         {
-            var cliente = await _context.Clientes.FindAsync(id);
-
-            if (cliente == null)
-            {
-                return NotFound();
-            }
-
-            return cliente;
+            return View();
         }
 
-        // PUT: api/Clientes/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutCliente(int id, Cliente cliente)
-        {
-            if (id != cliente.ClienteId)
-            {
-                return BadRequest();
-            }
-
-            _context.Entry(cliente).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!ClienteExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return NoContent();
-        }
-
-        // POST: api/Clientes
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        // POST: Clientes/Create
         [HttpPost]
-        public async Task<ActionResult<Cliente>> PostCliente(Cliente cliente)
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create(Cliente cliente)
         {
-            _context.Clientes.Add(cliente);
-            await _context.SaveChangesAsync();
-
-            return CreatedAtAction("GetCliente", new { id = cliente.ClienteId }, cliente);
-        }
-
-        // DELETE: api/Clientes/5
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteCliente(int id)
-        {
-            var cliente = await _context.Clientes.FindAsync(id);
-            if (cliente == null)
+            if (!ModelState.IsValid)
             {
-                return NotFound();
+                return View(cliente);
             }
 
-            _context.Clientes.Remove(cliente);
-            await _context.SaveChangesAsync();
+            var jsonContent = new StringContent(JsonConvert.SerializeObject(cliente), Encoding.UTF8, "application/json");
 
-            return NoContent();
-        }
+            var response = await _httpClient.PostAsync("clientes", jsonContent);
+            if (response.IsSuccessStatusCode)
+            {
+                return RedirectToAction(nameof(Index));
+            }
 
-        private bool ClienteExists(int id)
-        {
-            return _context.Clientes.Any(e => e.ClienteId == id);
+            // Si hay error en la API, mostramos error
+            ModelState.AddModelError(string.Empty, "Error al guardar el cliente.");
+            return View(cliente);
         }
     }
 }
+

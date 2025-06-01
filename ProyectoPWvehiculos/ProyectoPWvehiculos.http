@@ -5,16 +5,15 @@ GET {{ProyectoPWvehiculos_HostAddress}}/api/clientes
 
 ###
 
-
-
 POST {{ProyectoPWvehiculos_HostAddress}}/api/clientes
 Content-Type: application/json
 
 {
-  "Nombre": "Mario",
-  "Cedula": "1001405689",
-  "Telefono": "14511651651",
-  "Email": "lina@hotmail.com"
+  "Nombre": "Santiago",
+  "Cedula": "1001405671",
+  "Telefono": "123456789",
+  "Email": "santi@gmail.com",
+  "Direccion": "Cra 80 sur N 50"
 }
 
 ###
@@ -28,16 +27,118 @@ PUT {{ProyectoPWvehiculos_HostAddress}}/api/clientes/16
 Content-Type: application/json
 
 {
-  "clienteId": 16,
-  "nombre": "Mario",
-  "cedula": "1001405689",
-  "telefono": "14511651651",
-  "email": "lina@hotmail.com",
-  "direccion": "Puertas de Mayorca"
+  "ClienteId": 16,
+  "Nombre": "Mario",
+  "Cedula": "1001405689",
+  "Telefono": "14511651651",
+  "Email": "mario@gmail.com",
+  "Direccion": "Cra 28 - 78 A sur 80"
 }
 
 ###
 
 DELETE {{ProyectoPWvehiculos_HostAddress}}/api/clientes/1
+
+###
+
+
+
+
+//Vehiculo
+
+GET {{ProyectoPWvehiculos_HostAddress}}/api/vehiculoes
+
+###
+
+
+POST {{ProyectoPWvehiculos_HostAddress}}/api/vehiculoes
+Content-Type: application/json
+
+{
+   "placa": "LKA666",
+   "marca": "NISSAN",
+   "modelo": "MARCH",
+   "año": 2030,
+   "tipo": "Convertible",
+   "precioPorDia": 700000,
+   "estado": "Disponible"
+}
+
+###
+
+GET {{ProyectoPWvehiculos_HostAddress}}/api/vehiculoes/6
+
+###
+
+
+PUT {{ProyectoPWvehiculos_HostAddress}}/api/vehiculoes/6
+Content-Type: application/json
+
+{
+  "vehiculoId": 6,
+  "placa": "SHJS25",
+  "marca": "TOYOTA",
+  "modelo": "LAN CRUSIER",
+  "año": 2025,
+  "tipo": "Camioneta",
+  "precioPorDia": 280000.00,
+  "estado": "Rentado"
+}
+
+###
+
+DELETE {{ProyectoPWvehiculos_HostAddress}}/api/vehiculoes/5
+
+###
+
+
+
+
+//Alquiler
+
+GET {{ProyectoPWvehiculos_HostAddress}}/api/alquilers
+
+###
+
+
+
+POST {{ProyectoPWvehiculos_HostAddress}}/api/alquilers
+Content-Type: application/json
+
+{
+  "VehiculoId": 6,
+  "ClienteId": 16,
+  "FechaInicio": "2025-01-07",
+  "FechaFin": "2025-07-07",
+  "Estado": "En curso",
+  "FormaDePago": "mario@gmail.com",
+  "FechaRegistro": "2025-01-07"
+}
+
+###
+
+
+GET {{ProyectoPWvehiculos_HostAddress}}/api/alquilers/1
+
+###
+
+PUT {{ProyectoPWvehiculos_HostAddress}}/api/alquilers/1
+Content-Type: application/json
+
+{
+  "alquilerId": 1,
+  "vehiculoId": 6,
+  "clienteId": 16,
+  "fechaInicio": "2025-01-07T00:00:00",
+  "fechaFin": "2025-07-07T00:00:00",
+  "estado": "Pago",
+  "formaDePago": "mario@gmail.com",
+  "observaciones": null,
+  "fechaRegistro": "2025-01-07T00:00:00"
+}
+
+###
+
+DELETE {{ProyectoPWvehiculos_HostAddress}}/api/alquilers/1
 
 ###
