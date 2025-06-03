@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace ProyectoPWvehiculos.Models
+namespace ProyectoPWvehiculos.Models.Entities
 {
     public class Vehiculo
     {

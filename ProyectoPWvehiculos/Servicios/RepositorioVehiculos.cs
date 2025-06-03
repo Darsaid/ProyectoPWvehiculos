@@ -1,7 +1,7 @@
-﻿using ProyectoPWvehiculos.Models;
-using Dapper;
+﻿using Dapper;
 using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.Configuration;
+using ProyectoPWvehiculos.Models.Entities;
 
 
 namespace ProyectoPWvehiculos.Servicios

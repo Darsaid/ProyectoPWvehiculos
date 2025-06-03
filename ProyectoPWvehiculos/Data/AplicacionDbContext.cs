@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using ProyectoPWvehiculos.Models;
+using ProyectoPWvehiculos.Models.Entities;
 
 namespace ProyectoPWvehiculos.Data
 {
@@ -12,6 +12,6 @@ namespace ProyectoPWvehiculos.Data
 
         public DbSet<Cliente> Clientes { get; set; }
         public DbSet<Vehiculo> Vehiculo { get; set; }
-        public DbSet<ProyectoPWvehiculos.Models.Alquiler> Alquiler { get; set; }
+        public DbSet<Alquiler> Alquiler { get; set; }
     }
 }

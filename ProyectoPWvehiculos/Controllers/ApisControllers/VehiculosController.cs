@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ProyectoPWvehiculos.Data;
-using ProyectoPWvehiculos.Models;
+using ProyectoPWvehiculos.Models.Entities;
 
 namespace ProyectoPWvehiculos.Controllers.ControllersWeb
 {

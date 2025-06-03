@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
-using ProyectoPWvehiculos.Models;
+using ProyectoPWvehiculos.Models.Entities;
 using System.Text;
 
 namespace ProyectoPWvehiculos.Controllers

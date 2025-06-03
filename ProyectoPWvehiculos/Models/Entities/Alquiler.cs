@@ -1,4 +1,4 @@
-﻿namespace ProyectoPWvehiculos.Models
+﻿namespace ProyectoPWvehiculos.Models.Entities
 {
     public class Alquiler
     {

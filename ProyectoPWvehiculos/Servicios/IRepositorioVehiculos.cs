@@ -1,4 +1,4 @@
-﻿using ProyectoPWvehiculos.Models;
+﻿using ProyectoPWvehiculos.Models.Entities;
 
 namespace ProyectoPWvehiculos.Servicios
 {

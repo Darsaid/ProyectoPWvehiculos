@@ -1,6 +1,6 @@
 ﻿@ProyectoPWvehiculos_HostAddress = https://localhost:7117
 
-
+//Cliente
 GET {{ProyectoPWvehiculos_HostAddress}}/api/clientes
 
 ###
@@ -9,25 +9,25 @@ POST {{ProyectoPWvehiculos_HostAddress}}/api/clientes
 Content-Type: application/json
 
 {
-  "Nombre": "Santiago",
-  "Cedula": "1001405671",
-  "Telefono": "123456789",
-  "Email": "santi@gmail.com",
-  "Direccion": "Cra 80 sur N 50"
+  "Nombre": "Mario",
+  "Cedula": "64654946",
+  "Telefono": "155141594",
+  "Email": "mario@gmail.com",
+  "Direccion": "Cra 81 sur N 55"
 }
 
 ###
 
-GET {{ProyectoPWvehiculos_HostAddress}}/api/clientes/16
+GET {{ProyectoPWvehiculos_HostAddress}}/api/clientes/1022
 
 ###
 
 
-PUT {{ProyectoPWvehiculos_HostAddress}}/api/clientes/16
+PUT {{ProyectoPWvehiculos_HostAddress}}/api/clientes/1022
 Content-Type: application/json
 
 {
-  "ClienteId": 16,
+  "ClienteId": 1022,
   "Nombre": "Mario",
   "Cedula": "1001405689",
   "Telefono": "14511651651",
@@ -37,7 +37,7 @@ Content-Type: application/json
 
 ###
 
-DELETE {{ProyectoPWvehiculos_HostAddress}}/api/clientes/1
+DELETE {{ProyectoPWvehiculos_HostAddress}}/api/clientes/1022
 
 ###
 
@@ -45,13 +45,12 @@ DELETE {{ProyectoPWvehiculos_HostAddress}}/api/clientes/1
 
 
 //Vehiculo
-
-GET {{ProyectoPWvehiculos_HostAddress}}/api/vehiculoes
+GET {{ProyectoPWvehiculos_HostAddress}}/api/vehiculos
 
 ###
 
 
-POST {{ProyectoPWvehiculos_HostAddress}}/api/vehiculoes
+POST {{ProyectoPWvehiculos_HostAddress}}/api/vehiculos
 Content-Type: application/json
 
 {
@@ -66,12 +65,12 @@ Content-Type: application/json
 
 ###
 
-GET {{ProyectoPWvehiculos_HostAddress}}/api/vehiculoes/6
+GET {{ProyectoPWvehiculos_HostAddress}}/api/vehiculos/6
 
 ###
 
 
-PUT {{ProyectoPWvehiculos_HostAddress}}/api/vehiculoes/6
+PUT {{ProyectoPWvehiculos_HostAddress}}/api/vehiculos/6
 Content-Type: application/json
 
 {
@@ -81,13 +80,13 @@ Content-Type: application/json
   "modelo": "LAN CRUSIER",
   "año": 2025,
   "tipo": "Camioneta",
-  "precioPorDia": 280000.00,
+  "precioPorDia": 200000,
   "estado": "Rentado"
 }
 
 ###
 
-DELETE {{ProyectoPWvehiculos_HostAddress}}/api/vehiculoes/5
+DELETE {{ProyectoPWvehiculos_HostAddress}}/api/vehiculos/1011
 
 ###
 
@@ -95,7 +94,6 @@ DELETE {{ProyectoPWvehiculos_HostAddress}}/api/vehiculoes/5
 
 
 //Alquiler
-
 GET {{ProyectoPWvehiculos_HostAddress}}/api/alquilers
 
 ###
